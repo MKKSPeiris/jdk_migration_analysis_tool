@@ -1,0 +1,9 @@
+META-INF/MANIFEST.MF
+META-INF/ORACLE_J.SF
+META-INF/ORACLE_J.RSA
+META-INF/
+javax/crypto/JarVerifier$2.class
+javax/crypto/JarVerifier$1.class
+javax/crypto/JarVerifier$JarHolder.class
+javax/crypto/JarVerifier.class
+source_tips
