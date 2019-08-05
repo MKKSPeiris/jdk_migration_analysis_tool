@@ -9,6 +9,27 @@ echo "        | |   | |           __/ |               ";
 echo "        |_|   |_|          |___/                ";
 echo "JDK 11 Migration Analysis Tool V 1.0"
 
+DIR="tattletale-1.1.2.Final"
+downloadTattletale(){
+	echo "Downloading tattletale-1.1.2.Final"
+	if wget -q "https://drive.google.com/uc?export=download&id=1EgzLinKroQPqqfEUCrFRCUov110hw0qV" -O tattletale-1.1.2.Final.zip; then
+		unzip "tattletale-1.1.2.Final.zip"
+		rm "tattletale-1.1.2.Final.zip"
+		chmod 777 "$DIR"
+		echo "tattletale-1.1.2.Final Download complete"
+	else
+		echo "Failed to download tattletale-1.1.2.Final"
+	fi
+}
+if [ -d "$DIR" ]; then
+	if [ -z "$(ls -A $DIR)" ]; then
+		rm -rf "tattletale-1.1.2.Final"
+		downloadTattletale
+	fi
+else
+	downloadTattletale
+fi
+
 read -p "Enter project dir : " projectDir
 
 if [ ! -d $projectDir"/target/docker" ]; then
